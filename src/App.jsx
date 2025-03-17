@@ -155,10 +155,24 @@ const App = () => {
                     Strength: {fighter.strength}
                     <br />
                     Agility: {fighter.agility}
+                    <br />
+                    <button onClick={() => handleRemoveFighter(fighter)}>Remove</button>
                 </li>
             </ul>
         </>
     );
+
+    // Step 11: handleRemoveFighter()
+    const handleRemoveFighter = (removedFighter) => {
+        // model updatedTeam after updatedZombieFighters
+        const updatedTeam = team.filter(fighter => fighter.id !== removedFighter.id);
+        // update team
+        setTeam(updatedTeam);
+        // update zombieFighters so the removedFighter is added back to the original list
+        setZombieFighters([...zombieFighters, removedFighter]);
+        // replenish money
+        setMoney(money + removedFighter.price);
+    };
 
     // Step 8: calculate total strength of the current team by adding each fighter.strength to a starting value of 0
     // accumulator keeps track of the total ongoing amount
