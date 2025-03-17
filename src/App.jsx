@@ -160,13 +160,19 @@ const App = () => {
         </>
     );
 
+    // Step 8: calculate total strength of the current team by adding each fighter.strength to a starting value of 0
+    // accumulator keeps track of the total ongoing amount
+    const totalStrength = team.reduce((accumulator, fighter) => {
+        return accumulator + fighter.strength;
+    }, 0);
+
     return (
         <>
 
             <h1>Zombie Fighters</h1>
             {/* Step 5: display current value of money */}
             <h3>Money: {money}</h3>
-
+            <h3>Team Strength: {totalStrength}</h3>
             <h3>Team:</h3>
             <ul>
                 {myTeam}
