@@ -195,11 +195,12 @@ const App = () => {
             <h3>Team Strength: {totalStrength}</h3>
             <h3>Team Agility: {totalAgility}</h3>
             <h3>Team:</h3>
+            <p>{team.length === 0 ? 'Pick some team members!' : ''}</p>
             <ul>
                 {myTeam}
             </ul>
 
-            <h3>Fighters:</h3>
+            <h3>Available Fighters:</h3>
             <ul>
                 {zombieFightersList}
             </ul>
