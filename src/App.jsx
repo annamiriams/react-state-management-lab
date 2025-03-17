@@ -94,6 +94,27 @@ const App = () => {
         },
     ]);
 
+    // Step 6: handleAddFighter()
+    const handleAddFighter = (newFighter) => {
+        console.log(newFighter);
+
+        // if you have enough money, add a new fighter to your team
+        if (money >= newFighter.price) {
+            setTeam([...team, newFighter]);
+            // filter through zombieFighters and check to see if the selected fighter has a unique id. if it does, add it to updatedZombieFighters. if the id is not unique (meaning it's already been chosen), do not include that fighter in updatedZombieFighters
+            // updatedZombieFighters should not include selected fighter, so filter creates a new array without it
+            const updatedZombieFighters = zombieFighters.filter(fighter => fighter.id !== newFighter.id);
+            // call the setter function and update it to updatedZombieFighters
+            setZombieFighters(updatedZombieFighters);
+            // call the setter function and update it to be the total money minus the cost of the selected fighter
+            setMoney(money - newFighter.price);
+        } else {
+            console.log('You don\'t have enough money.')
+        };
+
+        console.log(team);
+    };
+
     // Step 4: display the list of zombieFighters by mapping the array into the UI of App.jsx
     // each character should have image, name, price, strength, agility
     // each character should have an add button to add them to your team
@@ -111,18 +132,20 @@ const App = () => {
                     <br />
                     Agility: {fighter.agility}
                     <br />
-                    {/* not a functioning button yet */}
-                    <button>Add</button>
+                    {/* Step 6: create a function called handleAddFighter()
+                    Accept a fighter object as an argument
+                    handleAddFighter() should be triggered when you click the Add button */}
+                    <button onClick={() => handleAddFighter(fighter)}>Add</button>
                 </li>
             </ul>
         </>
     );
 
-
     return (
         <>
 
             <h1>Zombie Fighters</h1>
+            {/* Step 5: display current value of money */}
             <h3>Money: {money}</h3>
             <h3>Fighters:</h3>
             <ul>
