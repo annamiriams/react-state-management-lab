@@ -166,6 +166,12 @@ const App = () => {
         return accumulator + fighter.strength;
     }, 0);
 
+    // Step 8: calculate total agility of the current team by adding each fighter.agility to a starting value of 0
+    // accumulator keeps track of the total ongoing amount
+    const totalAgility = team.reduce((accumulator, fighter) => {
+        return accumulator + fighter.agility;
+    }, 0);
+
     return (
         <>
 
@@ -173,6 +179,7 @@ const App = () => {
             {/* Step 5: display current value of money */}
             <h3>Money: {money}</h3>
             <h3>Team Strength: {totalStrength}</h3>
+            <h3>Team Agility: {totalAgility}</h3>
             <h3>Team:</h3>
             <ul>
                 {myTeam}
