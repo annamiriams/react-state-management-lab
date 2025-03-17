@@ -123,6 +123,8 @@ const App = () => {
         <>
 
             <h1>Zombie Fighters</h1>
+            <h3>Money: {money}</h3>
+            <h3>Fighters:</h3>
             <ul>
                 {zombieFightersList}
             </ul>
