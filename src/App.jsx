@@ -94,10 +94,38 @@ const App = () => {
         },
     ]);
 
+    // Step 4: display the list of zombieFighters by mapping the array into the UI of App.jsx
+    // each character should have image, name, price, strength, agility
+    // each character should have an add button to add them to your team
+    const zombieFightersList = zombieFighters.map((fighter, id) =>
+        <>
+            <ul>
+                <li key={id}>
+                    <img src={fighter.img} alt="Placeholder image of a zombieFighter" />
+                    <br />
+                    <b>{fighter.name}</b>
+                    <br />
+                    Price: {fighter.price}
+                    <br />
+                    Strength: {fighter.strength}
+                    <br />
+                    Agility: {fighter.agility}
+                    <br />
+                    {/* not a functioning button yet */}
+                    <button>Add</button>
+                </li>
+            </ul>
+        </>
+    );
+
+
     return (
         <>
 
-            <h1>Hello world!</h1>
+            <h1>Zombie Fighters</h1>
+            <ul>
+                {zombieFightersList}
+            </ul>
 
         </>
     );
