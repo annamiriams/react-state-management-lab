@@ -141,12 +141,37 @@ const App = () => {
         </>
     );
 
+    // Step 7: if team has selected fighters, display them in the appropriate section. otherwise, display a message
+    const myTeam = team.map((fighter, id) =>
+        <>
+            <ul>
+                <li key={id}>
+                    <img src={fighter.img} alt="Placeholder image of a zombieFighter" />
+                    <br />
+                    <b>{fighter.name}</b>
+                    <br />
+                    Price: {fighter.price}
+                    <br />
+                    Strength: {fighter.strength}
+                    <br />
+                    Agility: {fighter.agility}
+                </li>
+            </ul>
+        </>
+    );
+
     return (
         <>
 
             <h1>Zombie Fighters</h1>
             {/* Step 5: display current value of money */}
             <h3>Money: {money}</h3>
+
+            <h3>Team:</h3>
+            <ul>
+                {myTeam}
+            </ul>
+
             <h3>Fighters:</h3>
             <ul>
                 {zombieFightersList}
