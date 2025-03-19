@@ -7,3 +7,5 @@ Reactville is on high alert! As bizarre rumors turn into chilling reality, the c
 Your mission is to strategically assemble a survival team, handpicking members from the city’s diverse population, each bringing their unique skills and quirks. As the city’s newly appointed Survival Strategist, you will manage your team’s skills, resources, and stats.
 
 In this lab, you’ll utilize React’s state management to add and remove team members, track essential resources, and monitor your team’s overall readiness. This isn’t just about surviving; it’s about making dynamic UI updates and understanding the inner workings of React state through a fun and engaging simulation.
+
+[GA GitHub lab](https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management/canvas-landing-pages/seb.html)
